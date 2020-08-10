@@ -1,5 +1,7 @@
 const { Engine, Render, Runner, World, Bodies } = Matter;
 
+//grid variables
+const cells = 3;
 //canvass dimensions
 const width = 600;
 const height = 600;
@@ -27,8 +29,18 @@ const walls = [
 World.add(world, walls);
 
 //Grid for maze (generator)ß
-const grid = Array(3)
+const grid = Array(cells)
   .fill(null)
-  .map(() => Array(3).fill(false));
+  .map(() => Array(cells).fill(false));
 
 console.log(grid);
+
+//Vertical and Horizontal
+const verticals = Array(cells-1)
+  .fill(null)
+  .map(() => Array(cells).fill(false));
+const horizontals = Array(cells)
+  .fill(null)
+  .map(() => Array(cells-1).fill(false));
+
+console.log(horizontals, verticals);
