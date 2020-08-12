@@ -5,6 +5,7 @@ const cells = 3;
 //canvass dimensions
 const width = 600;
 const height = 600;
+const unitLength = width/cells;
 
 const engine = Engine.create();
 const { world } = engine;
@@ -104,3 +105,12 @@ const mazeCellGen = (row, column) => {
 };
 mazeCellGen(startRow, startColumn);
 
+//handle horizontals and verticals
+horizontals.forEach( row => {
+    row.forEach((open) => {
+        if (open) {
+            return;
+        }
+        const wall = Bodies.rectangle
+    });
+});
